@@ -13,10 +13,6 @@ local:
 spring:
   application:
     name: service-person-type
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/PersonTypeDB
-      auto-index-creation: true
   config:
     import: optional:configserver:http://ms-config-server:8888
 eureka:
