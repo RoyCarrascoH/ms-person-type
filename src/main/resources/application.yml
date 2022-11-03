@@ -15,7 +15,7 @@ spring:
     name: service-person-type
   data:
     mongodb:
-      uri: mongodb://localhost:27017/DebitCardDB
+      uri: mongodb://localhost:27017/PersonTypeDB
       auto-index-creation: true
   config:
     import: optional:configserver:http://ms-config-server:8888
@@ -26,7 +26,7 @@ eureka:
 resilience4j:
   circuitbreaker:
     instances:
-      debit-card:
+      ms-person-type:
         failureRateThreshold: 50
         minimumNumberOfCalls: 4
         slidingWindowType: COUNT_BASED

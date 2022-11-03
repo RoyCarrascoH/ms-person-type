@@ -3,17 +3,12 @@ package com.nttdata.bootcamp.mspersontype.application;
 import com.nttdata.bootcamp.mspersontype.exception.ResourceNotFoundException;
 import com.nttdata.bootcamp.mspersontype.infrastructure.PersonTypeRepository;
 import com.nttdata.bootcamp.mspersontype.model.PersonType;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-//@RequiredArgsConstructor
-//@Transactional
 public class PersonTypeServiceImpl implements PersonTypeService {
 
     @Autowired
@@ -32,8 +27,8 @@ public class PersonTypeServiceImpl implements PersonTypeService {
     }
 
     @Override
-    public Mono<PersonType> save(PersonType debitCard) {
-        return Mono.just(debitCard).flatMap(dc -> personTypeRepository.save(dc));
+    public Mono<PersonType> save(PersonType personType) {
+        return Mono.just(personType).flatMap(dc -> personTypeRepository.save(dc));
     }
 
     @Override
